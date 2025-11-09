@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>상품 상세페이지 템플릿</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 테마 선택 영역 -->
+  <header class="theme-picker">
+    <h2>🎨 테마 색상 선택</h2>
+    <input type="color" id="themeColorInput" value="#6a5acd" />
+    <button id="generatePaletteBtn">팔레트 생성</button>
+
+    <div id="palette" class="palette"></div>
+  </header>
+
+  <!-- 본문 섹션 컨테이너 -->
+  <main id="sectionContainer">
+    
+    <!-- ✅ 템플릿 1 (곡선형 이미지 위, 텍스트 아래) -->
+    <section class="section template1" data-bg="#3F51B5">
+      <button class="section-color-btn">🎨</button>
+      <div class="image-wrapper">
+        <img src="product1.jpg" alt="상품 이미지" />
+      </div>
+      <div class="content">
+        <h3>제품 제목 예시 1</h3>
+        <p>이곳에 상세 설명이 들어갑니다. 이미지와 텍스트가 하나의 흐름처럼 세로로 배치되는 템플릿입니다.</p>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 2 (원형 이미지 + 곡선 배경) -->
+    <section class="section template2" data-bg="#00796B">
+      <button class="section-color-btn">🎨</button>
+      <div class="circle-image">
+        <img src="product2.jpg" alt="상품 이미지" />
+      </div>
+      <div class="content">
+        <h3>곡선 + 원형 템플릿</h3>
+        <p>이미지가 원형 프레임에 들어가며, 곡선 배경과 함께 감성적인 느낌을 줍니다.</p>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 3 (이미지 좌측 곡선, 텍스트 우측) -->
+    <section class="section template3" data-bg="#FFC107">
+      <button class="section-color-btn">🎨</button>
+      <div class="image-left">
+        <img src="product3.jpg" alt="상품 이미지" />
+      </div>
+      <div class="content-right">
+        <h3>좌측 곡선 이미지</h3>
+        <p>이미지가 왼쪽으로 곡선 영역에 배치되고, 텍스트는 오른쪽에 자연스럽게 이어집니다.</p>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 4 (대형 이미지 + 오버랩 텍스트 카드) -->
+    <section class="section template4" data-bg="#1976D2">
+      <button class="section-color-btn">🎨</button>
+      <div class="big-image">
+        <img src="product4.jpg" alt="상품 이미지" />
+        <div class="textOverlayCard">
+          <h3>이미지 위 카드형 텍스트</h3>
+          <p>메인 비주얼 위에 캡션처럼 설명문이 배치되는 스타일입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 5 (곡선 2단 분리형) -->
+    <section class="section template5" data-bg="#C2185B">
+      <button class="section-color-btn">🎨</button>
+      <div class="top-curve">
+        <img src="product5.jpg" alt="상품 이미지" />
+      </div>
+      <div class="bottom-text">
+        <h3>2단 곡선 텍스트 구성</h3>
+        <p>윗부분에 이미지, 아랫부분에 설명이 곡선으로 연결된 형태입니다.</p>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 6 (텍스트 전용 정보 섹션 - FAQ 등) -->
+    <section class="section template6" data-bg="#F0F4C3">
+      <div class="content">
+        <h3>자주 묻는 질문 (FAQ)</h3>
+        <p>이곳은 제품에 대한 자주 묻는 질문이나 중요한 공지사항을 표시하는 섹션입니다. 이미지가 없어 텍스트 정보 전달에 집중할 수 있습니다.</p>
+        <p>Q: 제품 보증 기간은 어떻게 되나요?<br>A: 구매일로부터 1년간 무상 보증됩니다.</p>
+        <p>Q: 배송은 얼마나 걸리나요?<br>A: 주문 후 2~3영업일 이내에 배송됩니다.</p>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 7 (비대칭 좌우 배치: 텍스트 좌측, 이미지 우측) -->
+    <section class="section template7" data-bg="#E0F2F7">
+      <button class="section-color-btn">🎨</button>
+      <div class="content-left">
+        <h3>새로운 기능 소개</h3>
+        <p>이 템플릿은 텍스트와 이미지를 비대칭적으로 배치하여 시각적인 흥미를 유발합니다. 제품의 특징을 강조하거나 스토리를 전달하기에 좋습니다.</p>
+        <ul>
+          <li>강력한 성능</li>
+          <li>세련된 디자인</li>
+          <li>쉬운 사용성</li>
+        </ul>
+      </div>
+      <div class="image-right">
+        <img src="product1.jpg" alt="제품 이미지" />
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 8 (아이콘이 있는 기능 목록) -->
+    <section class="section template8" data-bg="#FFFDE7">
+      <h3>주요 기능</h3>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <span class="feature-icon">✨</span>
+          <h4>혁신적인 디자인</h4>
+          <p>사용자의 편의를 최우선으로 고려한 세련되고 혁신적인 디자인입니다.</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🔋</span>
+          <h4>강력한 배터리</h4>
+          <p>하루 종일 지속되는 강력한 배터리 성능으로 끊김 없는 사용이 가능합니다.</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🛡️</span>
+          <h4>최고의 보안</h4>
+          <p>개인 정보를 안전하게 보호하는 최첨단 보안 기술이 적용되었습니다.</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">⚡</span>
+          <h4>초고속 성능</h4>
+          <p>어떤 작업도 빠르게 처리하는 초고속 프로세서와 최적화된 시스템을 경험하세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 9 (고객 리뷰/사용 후기) -->
+    <section class="section template9" data-bg="#F3E5F5">
+      <h3>고객 리뷰</h3>
+      <div class="reviews-container">
+        <div class="review-item">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="review-text">"정말 만족스러운 제품입니다! 기대 이상으로 성능이 뛰어나고 디자인도 훌륭해요."</p>
+          <p class="reviewer">- 김*현 고객님</p>
+        </div>
+        <div class="review-item">
+          <div class="stars">⭐⭐⭐⭐</div>
+          <p class="review-text">"배송도 빠르고 제품도 좋아요. 다만, 색상이 화면과 약간 달라서 별 하나 뺐어요."</p>
+          <p class="reviewer">- 이*수 고객님</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 10 (사양 표) -->
+    <section class="section template10" data-bg="#E8F5E9">
+      <h3>제품 사양</h3>
+      <table class="specs-table">
+        <tr>
+          <th>항목</th>
+          <td>내용</td>
+        </tr>
+        <tr>
+          <th>모델명</th>
+          <td>XYZ-1234</td>
+        </tr>
+        <tr>
+          <th>크기</th>
+          <td>150 x 70 x 8 mm</td>
+        </tr>
+        <tr>
+          <th>무게</th>
+          <td>180g</td>
+        </tr>
+        <tr>
+          <th>색상</th>
+          <td>미드나잇 블랙, 스노우 화이트, 오션 블루</td>
+        </tr>
+        <tr>
+          <th>배터리</th>
+          <td>4000mAh</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- ✅ 템플릿 11 (비대칭 좌우 배치: 이미지 좌측, 텍스트 우측) -->
+    <section class="section template11" data-bg="#E8F5E9">
+      <button class="section-color-btn">🎨</button>
+      <div class="image-left">
+        <img src="product2.jpg" alt="제품 이미지" />
+      </div>
+      <div class="content-right">
+        <h3>차별화된 경험</h3>
+        <p>이 템플릿은 이미지를 먼저 보여주고 텍스트로 설명을 보완하는 형태로, 시각적인 요소가 중요한 제품에 적합합니다.</p>
+        <ul>
+          <li>직관적인 인터페이스</li>
+          <li>뛰어난 휴대성</li>
+          <li>오래가는 배터리</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 12 (텍스트 중앙, 이미지 좌우 분할) -->
+    <section class="section template12" data-bg="#FCE4EC">
+      <button class="section-color-btn">🎨</button>
+      <div class="image-split left">
+        <img src="product3.jpg" alt="제품 이미지 1" />
+      </div>
+      <div class="content-center">
+        <h3>다채로운 디자인</h3>
+        <p>중앙에 핵심 메시지를 전달하고, 양 옆에 관련 이미지를 배치하여 시각적인 풍성함을 더합니다.</p>
+      </div>
+      <div class="image-split right">
+        <img src="product4.jpg" alt="제품 이미지 2" />
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 13 (상단 제목/설명, 하단 3단 이미지 갤러리) -->
+    <section class="section template13" data-bg="#E3F2FD">
+      <button class="section-color-btn">🎨</button>
+      <div class="header-content">
+        <h3>갤러리형 제품 소개</h3>
+        <p>제품의 다양한 모습을 한눈에 보여줄 수 있는 갤러리형 템플릿입니다. 시각적인 정보 전달에 효과적입니다.</p>
+      </div>
+      <div class="image-gallery">
+        <img src="product1.jpg" alt="제품 이미지 1" />
+        <img src="product2.jpg" alt="제품 이미지 2" />
+        <img src="product3.jpg" alt="제품 이미지 3" />
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 14 (이미지 배경 + 하단 투명 카드형 텍스트) -->
+    <section class="section template14" data-bg="#4CAF50">
+      <button class="section-color-btn">🎨</button>
+      <div class="background-image">
+        <img src="product5.jpg" alt="배경 이미지" />
+      </div>
+      <div class="text-card-bottom">
+        <h3>놀라운 기능과 성능</h3>
+        <p>제품의 핵심 가치를 전달하는 배경 이미지와 함께, 중요한 정보를 하단 카드에 담아 시선을 사로잡습니다.</p>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 15 (텍스트와 작은 이미지 리스트형) -->
+    <section class="section template15" data-bg="#FFEBEE">
+      <button class="section-color-btn">🎨</button>
+      <h3>제품의 주요 특징</h3>
+      <div class="feature-list">
+        <div class="feature-item">
+          <img src="product1.jpg" alt="특징 이미지 1" />
+          <div class="feature-content">
+            <h4>초경량 디자인</h4>
+            <p>가벼운 무게로 휴대성을 극대화하여 언제 어디서든 편리하게 사용할 수 있습니다.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="product2.jpg" alt="특징 이미지 2" />
+          <div class="feature-content">
+            <h4>고해상도 디스플레이</h4>
+            <p>생생하고 선명한 화질로 콘텐츠를 더욱 몰입감 있게 즐길 수 있습니다.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="product3.jpg" alt="특징 이미지 3" />
+          <div class="feature-content">
+            <h4>강력한 보안 기능</h4>
+            <p>최첨단 보안 기술로 사용자의 개인 정보를 안전하게 보호합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 16 (중앙 원형 텍스트, 주변 이미지) -->
+    <section class="section template16" data-bg="#E0F7FA">
+      <button class="section-color-btn">🎨</button>
+      <div class="center-text-circle">
+        <h3>혁신을 경험하세요</h3>
+        <p>제품의 핵심 가치를 중앙에 배치하고, 주변 이미지로 다양한 측면을 보여줍니다.</p>
+      </div>
+      <div class="surrounding-images">
+        <img src="product4.jpg" alt="주변 이미지 1" class="img-top-left" />
+        <img src="product5.jpg" alt="주변 이미지 2" class="img-top-right" />
+        <img src="product1.jpg" alt="주변 이미지 3" class="img-bottom-left" />
+        <img src="product2.jpg" alt="주변 이미지 4" class="img-bottom-right" />
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 17 (비포/애프터 비교) -->
+    <section class="section template17" data-bg="#E0F2F7">
+      <button class="section-color-btn">🎨</button>
+      <h3>비포 & 애프터</h3>
+      <p class="description">제품 사용 전후의 놀라운 변화를 직접 확인해보세요.</p>
+      <div class="comparison-container">
+        <div class="comparison-item">
+          <img src="product1.jpg" alt="비포 이미지" />
+          <p class="label">BEFORE</p>
+          <p class="caption">제품 사용 전의 모습입니다.</p>
+        </div>
+        <div class="comparison-item">
+          <img src="product2.jpg" alt="애프터 이미지" />
+          <p class="label">AFTER</p>
+          <p class="caption">제품 사용 후 확연히 달라진 모습입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 18 (이미지 강조 - 테두리 이펙트) -->
+    <section class="section template18" data-bg="#F3E5F5">
+      <button class="section-color-btn">🎨</button>
+      <h3>주목! 이 제품을 선택해야 하는 이유</h3>
+      <p class="description">혁신적인 디자인과 뛰어난 성능으로 당신의 일상을 변화시킬 제품입니다.</p>
+      <div class="highlight-image-container">
+        <img src="product3.jpg" alt="강조된 제품 이미지" />
+      </div>
+      <p class="caption">제품의 아름다움과 기능성을 동시에 경험하세요.</p>
+    </section>
+
+    <!-- ✅ 템플릿 19 (이미지 데코레이션 - 스티커/배지 효과) -->
+    <section class="section template19" data-bg="#E8F5E9">
+      <button class="section-color-btn">🎨</button>
+      <h3>특별한 혜택!</h3>
+      <p class="description">지금 구매하시면 특별한 선물을 드립니다.</p>
+      <div class="decorated-image-container">
+        <img src="product4.jpg" alt="데코레이션된 제품 이미지" />
+        <div class="sticker">BEST</div>
+      </div>
+      <p class="caption">놓치지 마세요!</p>
+    </section>
+
+    <!-- ✅ 템플릿 20 (이미지 데코레이션 - 리본 배지) -->
+    <section class="section template20" data-bg="#E0F7FA">
+      <button class="section-color-btn">🎨</button>
+      <h3>새로운 경험!</h3>
+      <p class="description">새롭게 출시된 제품으로 당신의 일상을 더욱 풍요롭게.</p>
+      <div class="decorated-image-container">
+        <img src="product1.jpg" alt="데코레이션된 제품 이미지" />
+        <div class="ribbon">NEW</div>
+      </div>
+      <p class="caption">지금 바로 만나보세요!</p>
+    </section>
+
+    <!-- ✅ 템플릿 21 (이미지 데코레이션 - 핀 고정 효과) -->
+    <section class="section template21" data-bg="#FFF3E0">
+      <button class="section-color-btn">🎨</button>
+      <h3>놓칠 수 없는 기회!</h3>
+      <p class="description">한정 수량으로 제공되는 특별한 아이템입니다.</p>
+      <div class="decorated-image-container">
+        <img src="product1.jpg" alt="데코레이션된 제품 이미지" />
+        <div class="pin"></div>
+      </div>
+      <p class="caption">서두르세요!</p>
+    </section>
+
+    <!-- ✅ 템플릿 22 (이미지 데코레이션 - 원형 스탬프) -->
+    <section class="section template22" data-bg="#FCE4EC">
+      <button class="section-color-btn">🎨</button>
+      <h3>베스트 셀러!</h3>
+      <p class="description">많은 고객들이 인정한 최고의 제품입니다.</p>
+      <div class="decorated-image-container">
+        <img src="product3.jpg" alt="데코레이션된 제품 이미지" />
+        <div class="stamp">BEST</div>
+      </div>
+      <p class="caption">만족도 100%</p>
+    </section>
+
+    <!-- ✅ 템플릿 23 (2x2 이미지 그리드 + 짧은 설명) -->
+    <section class="section template23" data-bg="#E3F2FD">
+      <button class="section-color-btn">🎨</button>
+      <h3>제품의 다양한 모습</h3>
+      <p class="description">제품의 주요 특징들을 시각적으로 확인해보세요.</p>
+      <div class="image-grid-2x2">
+        <div class="grid-item">
+          <img src="product1.jpg" alt="제품 이미지 1" />
+          <p class="grid-caption">정면 디자인</p>
+        </div>
+        <div class="grid-item">
+          <img src="product2.jpg" alt="제품 이미지 2" />
+          <p class="grid-caption">측면 디자인</p>
+        </div>
+        <div class="grid-item">
+          <img src="product3.jpg" alt="제품 이미지 3" />
+          <p class="grid-caption">후면 디자인</p>
+        </div>
+        <div class="grid-item">
+          <img src="product4.jpg" alt="제품 이미지 4" />
+          <p class="grid-caption">내부 구조</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 24 (대형 숫자 강조 + 텍스트 설명) -->
+    <section class="section template24" data-bg="#FFFDE7">
+      <button class="section-color-btn">🎨</button>
+      <div class="number-highlight-container">
+        <div class="number-box">
+          <span class="large-number">99</span>
+          <span class="unit">%</span>
+        </div>
+        <div class="text-content">
+          <h3>고객 만족도 99%</h3>
+          <p>수많은 고객들이 직접 경험하고 인정한 최고의 만족도를 자랑합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 25 (이미지 + 텍스트 오버랩 - 모던한 비대칭) -->
+    <section class="section template25" data-bg="#FCE4EC">
+      <button class="section-color-btn">🎨</button>
+      <div class="image-overlap-area">
+        <img src="product5.jpg" alt="오버랩 이미지" />
+      </div>
+      <div class="text-overlap-card">
+        <h3>새로운 시대를 열다</h3>
+        <p>미래 지향적인 디자인과 혁신적인 기술이 만나 탄생한 제품입니다. 당신의 삶을 더욱 풍요롭게 만들어 줄 것입니다.</p>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 26 (텍스트 중심의 인용구/슬로건 강조) -->
+    <section class="section template26" data-bg="#E0F7FA">
+      <button class="section-color-btn">🎨</button>
+      <div class="quote-container">
+        <p class="quote-text">"우리의 목표는 단순한 제품을 넘어, 고객의 삶에 영감을 주는 것입니다."</p>
+        <p class="quote-author">- 브랜드 창립자</p>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 27 (단계별 프로세스/사용법 안내) -->
+    <section class="section template27" data-bg="#FFFDE7">
+      <button class="section-color-btn">🎨</button>
+      <h3>3단계로 시작하기</h3>
+      <p class="description">간단한 절차를 통해 제품을 바로 사용해보세요.</p>
+      <div class="process-steps">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <img src="product1.jpg" alt="단계 1 이미지" />
+          <h4>제품 등록</h4>
+          <p>간편하게 제품을 등록하고 서비스를 시작하세요.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <img src="product2.jpg" alt="단계 2 이미지" />
+          <h4>설정 맞춤화</h4>
+          <p>개인 취향에 맞춰 다양한 설정을 변경할 수 있습니다.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <img src="product3.jpg" alt="단계 3 이미지" />
+          <h4>사용 시작</h4>
+          <p>이제 모든 준비가 완료되었습니다. 새로운 경험을 즐기세요!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 28 (원형 이미지 갤러리) -->
+    <section class="section template28" data-bg="#F3E5F5">
+      <button class="section-color-btn">🎨</button>
+      <h3>디테일 갤러리</h3>
+      <p class="description">제품의 섬세한 디자인과 마감을 확인해보세요.</p>
+      <div class="circle-image-gallery">
+        <div class="circle-gallery-item">
+          <img src="product4.jpg" alt="디테일 이미지 1" />
+          <p>정교한 마감</p>
+        </div>
+        <div class="circle-gallery-item">
+          <img src="product5.jpg" alt="디테일 이미지 2" />
+          <p>인체공학적 설계</p>
+        </div>
+        <div class="circle-gallery-item">
+          <img src="product1.jpg" alt="디테일 이미지 3" />
+          <p>고급스러운 소재</p>
+        </div>
+        <div class="circle-gallery-item">
+          <img src="product2.jpg" alt="디테일 이미지 4" />
+          <p>직관적인 인터페이스</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 29 (이미지 배경 + 중앙에 투명한 텍스트 블록) -->
+    <section class="section template29" data-bg="#4CAF50">
+      <button class="section-color-btn">🎨</button>
+      <div class="background-image-full">
+        <img src="product3.jpg" alt="배경 이미지" />
+      </div>
+      <div class="center-text-overlay">
+        <h3>지속 가능한 미래</h3>
+        <p>환경을 생각하는 기술로 더 나은 내일을 만들어갑니다. 우리의 작은 노력이 큰 변화를 만듭니다.</p>
+      </div>
+    </section>
+
+    <!-- ✅ 템플릿 30 (제품 스펙 비교 테이블) -->
+    <section class="section template30" data-bg="#E8F5E9">
+      <button class="section-color-btn">🎨</button>
+      <h3>제품 스펙 비교</h3>
+      <p class="description">두 가지 모델의 주요 사양을 비교해보세요.</p>
+      <div class="specs-comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th>모델 A</th>
+              <th>모델 B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>프로세서</td>
+              <td>Core i5</td>
+              <td>Core i7</td>
+            </tr>
+            <tr>
+              <td>RAM</td>
+              <td>8GB</td>
+              <td>16GB</td>
+            </tr>
+            <tr>
+              <td>저장 공간</td>
+              <td>256GB SSD</td>
+              <td>512GB SSD</td>
+            </tr>
+            <tr>
+              <td>디스플레이</td>
+              <td>13인치 FHD</td>
+              <td>15인치 QHD</td>
+            </tr>
+            <tr>
+              <td>배터리</td>
+              <td>10시간</td>
+              <td>12시간</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

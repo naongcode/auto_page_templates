@@ -1,0 +1,1734 @@
+/* ✅ 기본 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* ✅ 상단 테마 선택 바 */
+.theme-picker {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#palette {
+  display: none;
+  gap: 6px;
+  margin-left: 20px;
+}
+
+#palette.show {
+  display: flex;
+}
+
+.palette-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.palette-color:hover {
+  transform: scale(1.2);
+}
+
+/* ✅ 섹션 기본 스타일 */
+.section {
+  --section-bg: #ffffff;
+  --text-color: #000000; /* 기본 텍스트 색상 변수 정의 */
+  background-color: var(--section-bg);
+  border-radius: 18px;
+  padding: 50px 30px; /* 수직 패딩 증가 */
+  margin: 30px auto;
+  max-width: 600px; /* 너비 감소 */
+  position: relative;
+  transition: background 0.4s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.section h3 {
+  font-size: 1.6rem; /* 글꼴 크기 조정 */
+  margin-bottom: 12px; /* 여백 조정 */
+  color: var(--text-color);
+}
+
+.section p {
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+/* ✅ 각 섹션 색상 변경 버튼 */
+.section-color-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.8);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.section-color-btn:hover {
+  background: rgba(255,255,255,1);
+  transform: scale(1.1);
+}
+
+/* ✅ Template 1 - 이미지 위, 텍스트 아래 (곡선) */
+.template1 .image-wrapper {
+  width: 100%;
+  height: 400px; /* 높이 증가 */
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  clip-path: ellipse(110% 85% at 50% 15%); /* 곡선 형태 조정 */
+}
+
+.template1 .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ✅ Template 2 - 원형 이미지 + 곡선 */
+.template2 {
+  text-align: center;
+}
+
+.template2 .circle-image {
+  width: 200px; /* 크기 조정 */
+  height: 200px; /* 크기 조정 */
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 25px; /* 여백 조정 */
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.template2 .circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ✅ Template 3 - 좌측 곡선 이미지 */
+.template3 {
+  display: flex;
+  gap: 20px; /* 간격 조정 */
+  align-items: center;
+}
+
+.template3 .image-left {
+  flex: 1;
+  border-radius: 0 100px 100px 0; /* 곡선 반경 조정 */
+  overflow: hidden;
+  height: 250px; /* 높이 조정 */
+}
+
+.template3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.template3 .content-right {
+  flex: 1.2; /* 콘텐츠 영역 비율 조정 */
+}
+
+/* ✅ Template 4 - 이미지 + 카드형 텍스트 */
+.template4 .big-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 350px; /* 높이 조정 */
+}
+
+.template4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.template4 .textOverlayCard {
+  position: absolute;
+  bottom: 15px; /* 위치 조정 */
+  left: 15px; /* 위치 조정 */
+  background: rgba(255,255,255,0.8); /* 투명도 조정 */
+  padding: 15px; /* 패딩 조정 */
+  border-radius: 14px;
+  max-width: 80%; /* 최대 너비 조정 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.template4 .textOverlayCard h3 {
+  font-size: 1.3rem; /* 제목 크기 줄임 */
+}
+
+/* ✅ Template 5 - 상단 이미지 + 하단 텍스트 곡선 */
+.template5 .top-curve {
+  height: 300px; /* 높이 조정 */
+  border-radius: 20px 20px 40% 40%; /* 곡선 형태 조정 */
+  overflow: hidden;
+}
+
+.template5 .top-curve img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.template5 .bottom-text {
+  padding-top: 20px; /* 간격 조정 */
+}
+
+/* ✅ Template 6 - 텍스트 전용 정보 섹션 (FAQ 등) */
+.template6 .content {
+  /* 텍스트 전용이므로 특별한 레이아웃 없이 기본 .section 스타일 상속 */
+  text-align: left;
+}
+
+.template6 h3 {
+  margin-bottom: 15px;
+}
+
+.template6 p {
+  margin-bottom: 10px;
+}
+
+.template6 p:last-child {
+  margin-bottom: 0;
+}
+
+/* ✅ Template 8 - 아이콘이 있는 기능 목록 */
+.template8 h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.template8 .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.template8 .feature-item {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.7); /* 반투명 배경 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.template8 .feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.template8 .feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.template8 h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.template8 .feature-item p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* ✅ Template 9 - 고객 리뷰/사용 후기 */
+.template9 h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.template9 .reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.template9 .review-item {
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.template9 .stars {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.template9 .review-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.template9 .reviewer {
+  font-size: 0.9rem;
+  text-align: right;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* ✅ Template 10 - 사양 표 */
+.template10 h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.template10 .specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.template10 .specs-table th,
+.template10 .specs-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  text-align: left;
+  color: var(--text-color);
+}
+
+.template10 .specs-table th {
+  background-color: rgba(0,0,0,0.05);
+  font-weight: bold;
+  width: 30%; /* 왼쪽 열 너비 조정 */
+}
+
+.template10 .specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ✅ Template 7 - 비대칭 좌우 배치: 텍스트 좌측, 이미지 우측 */
+.template7 {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* 텍스트와 이미지 사이 간격 */
+  padding: 40px 30px; /* 섹션 내부 패딩 조정 */
+}
+
+.template7 .content-left {
+  flex: 1.5; /* 텍스트 영역을 이미지보다 넓게 */
+  padding-right: 20px; /* 이미지와의 여백 */
+}
+
+.template7 .content-left h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.template7 .content-left p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.template7 .content-left ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.template7 .content-left ul li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 25px;
+  color: var(--text-color);
+}
+
+.template7 .content-left ul li::before {
+  content: '✔️'; /* 체크마크 아이콘 */
+  position: absolute;
+  left: 0;
+  color: var(--text-color); /* 텍스트 색상에 맞춤 */
+}
+
+.template7 .image-right {
+  flex: 1; /* 이미지 영역 */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: rotate(3deg); /* 약간의 기울기 효과 */
+  transition: transform 0.3s ease-in-out;
+}
+
+.template7 .image-right:hover {
+  transform: rotate(0deg) scale(1.02); /* 호버 시 효과 */
+}
+
+.template7 .image-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template7 {
+    flex-direction: column; /* 모바일에서는 세로로 쌓이도록 */
+    text-align: center;
+  }
+
+  .template7 .content-left {
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .template7 .content-left ul {
+    text-align: left; /* 리스트는 다시 왼쪽 정렬 */
+    margin: 0 auto;
+    max-width: 300px; /* 리스트 너비 제한 */
+  }
+
+  .template7 .image-right {
+    width: 80%; /* 이미지 너비 조정 */
+    transform: rotate(0deg); /* 모바일에서는 기울기 제거 */
+  }
+}
+
+/* ✅ Template 11 - 비대칭 좌우 배치: 이미지 좌측, 텍스트 우측 */
+.template11 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 30px;
+}
+
+.template11 .image-left {
+  flex: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: rotate(-3deg); /* 반대 방향으로 기울기 */
+}
+
+.template11 .image-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template11 .content-right {
+  flex: 1.5;
+  padding-left: 20px;
+}
+
+.template11 .content-right h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.template11 .content-right p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.template11 .content-right ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.template11 .content-right ul li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 25px;
+  color: var(--text-color);
+}
+
+.template11 .content-right ul li::before {
+  content: '✅'; /* 체크마크 아이콘 */
+  position: absolute;
+  left: 0;
+  color: var(--text-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template11 {
+    flex-direction: column-reverse; /* 모바일에서는 이미지 아래, 텍스트 위로 */
+    text-align: center;
+  }
+
+  .template11 .content-right {
+    padding-left: 0;
+    padding-bottom: 20px;
+  }
+
+  .template11 .content-right ul {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+
+  .template11 .image-left {
+    width: 80%;
+    transform: rotate(0deg);
+  }
+}
+
+/* ✅ Template 12 - 텍스트 중앙, 이미지 좌우 분할 */
+.template12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 30px;
+}
+
+.template12 .image-split {
+  flex: 1;
+  max-width: 180px; /* 이미지 크기 조정 (120px -> 180px) */
+  height: 180px; /* 이미지 크기 조정 (120px -> 180px) */
+  border-radius: 50%; /* 원형 이미지 */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.template12 .image-split img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.template12 .content-center {
+  flex: 2; /* 텍스트 영역을 더 넓게 */
+  text-align: center;
+  padding: 0 20px;
+}
+
+.template12 .content-center h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.template12 .content-center p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template12 {
+    flex-direction: column;
+  }
+
+  .template12 .image-split {
+    max-width: 200px; /* 모바일에서 너비 조정 (150px -> 200px) */
+    height: 200px; /* 모바일에서 높이 조정 (150px -> 200px) */
+  }
+
+  .template12 .content-center {
+    padding: 20px 0;
+  }
+}
+
+/* ✅ Template 13 - 상단 제목/설명, 하단 3단 이미지 갤러리 */
+.template13 .header-content {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.template13 .header-content h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.template13 .header-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.template13 .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 3단 그리드 */
+  gap: 15px;
+}
+
+.template13 .image-gallery img {
+  width: 100%;
+  height: 150px; /* 이미지 높이 고정 */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template13 .image-gallery {
+    grid-template-columns: 1fr; /* 모바일에서는 1단으로 */
+  }
+
+  .template13 .header-content p {
+    max-width: 95%;
+  }
+}
+
+/* ✅ Template 14 - 이미지 배경 + 하단 투명 카드형 텍스트 */
+.template14 {
+  position: relative;
+  padding: 0; /* 배경 이미지가 섹션 전체를 덮도록 패딩 제거 */
+  height: 450px; /* 섹션 높이 고정 */
+  display: flex;
+  align-items: flex-end; /* 텍스트 카드를 하단에 배치 */
+  justify-content: center;
+}
+
+.template14 .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 18px; /* 섹션의 border-radius와 일치 */
+}
+
+.template14 .background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template14 .text-card-bottom {
+  position: relative; /* z-index를 위해 필요 */
+  background: rgba(255, 255, 255, 0.85); /* 반투명 흰색 배경 */
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px; /* 하단 여백 */
+  max-width: 85%;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1; /* 이미지 위에 오도록 */
+}
+
+.template14 .text-card-bottom h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: black; /* 가독성을 위해 항상 검정색으로 고정 */
+}
+
+.template14 .text-card-bottom p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: black; /* 가독성을 위해 항상 검정색으로 고정 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template14 {
+    height: 350px;
+  }
+  .template14 .text-card-bottom {
+    max-width: 90%;
+    margin-bottom: 15px;
+  }
+}
+
+/* ✅ Template 15 - 텍스트와 작은 이미지 리스트형 */
+.template15 h3 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.template15 .feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.template15 .feature-item {
+  display: flex;
+  align-items: flex-start; /* 이미지와 텍스트 상단 정렬 */
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.template15 .feature-item img {
+  width: 70px; /* 이미지 크기 고정 */
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0; /* 이미지 크기 고정 */
+}
+
+.template15 .feature-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.template15 .feature-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template15 .feature-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .template15 .feature-item img {
+    margin-bottom: 10px;
+  }
+}
+
+/* ✅ Template 16 - 중앙 원형 텍스트, 주변 이미지 */
+.template16 {
+  position: relative; /* 자식 요소의 절대 위치 기준 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+  min-height: 400px; /* 최소 높이 설정 */
+}
+
+.template16 .center-text-circle {
+  width: 220px; /* 원형 텍스트 블록 크기 */
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  z-index: 1; /* 이미지 위에 오도록 */
+}
+
+.template16 .center-text-circle h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.template16 .center-text-circle p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.template16 .surrounding-images {
+  position: absolute; /* 절대 위치로 배치 */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* 이미지 클릭 방지 */
+}
+
+.template16 .surrounding-images img {
+  position: absolute;
+  width: 80px; /* 작은 이미지 크기 */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 0; /* 텍스트 블록 뒤에 오도록 */
+}
+
+.template16 .surrounding-images .img-top-left {
+  top: 15%;
+  left: 10%;
+}
+.template16 .surrounding-images .img-top-right {
+  top: 10%;
+  right: 10%;
+}
+.template16 .surrounding-images .img-bottom-left {
+  bottom: 15%;
+  left: 15%;
+}
+.template16 .surrounding-images .img-bottom-right {
+  bottom: 10%;
+  right: 15%;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template16 .center-text-circle {
+    width: 180px;
+    height: 180px;
+  }
+  .template16 .surrounding-images img {
+    width: 60px;
+    height: 60px;
+  }
+  .template16 .surrounding-images .img-top-left {
+    top: 10%;
+    left: 5%;
+  }
+  .template16 .surrounding-images .img-top-right {
+    top: 8%;
+    right: 5%;
+  }
+  .template16 .surrounding-images .img-bottom-left {
+    bottom: 10%;
+    left: 8%;
+  }
+  .template16 .surrounding-images .img-bottom-right {
+    bottom: 8%;
+    right: 8%;
+  }
+}
+
+/* ✅ Template 17 - 비포/애프터 비교 */
+.template17 {
+  text-align: center;
+}
+
+.template17 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template17 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template17 .comparison-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+}
+
+.template17 .comparison-item {
+  flex: 1;
+  min-width: 150px; /* 최소 너비 설정 */
+  max-width: 45%; /* 두 개가 나란히 오도록 */
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.template17 .comparison-item img {
+  width: 100%;
+  height: 200px; /* 이미지 높이 고정 */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.template17 .comparison-item .label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.template17 .comparison-item .caption {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template17 .comparison-container {
+    flex-direction: column; /* 모바일에서는 세로로 쌓이도록 */
+    align-items: center;
+  }
+  .template17 .comparison-item {
+    max-width: 90%; /* 모바일에서 너비 조정 */
+  }
+}
+
+/* ✅ Template 18 - 이미지 강조 (테두리 이펙트) */
+.template18 {
+  text-align: center;
+}
+
+.template18 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template18 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template18 .highlight-image-container {
+  width: 250px; /* 이미지 컨테이너 크기 */
+  height: 250px;
+  margin: 0 auto 20px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 0 5px rgba(var(--text-color-rgb), 0.2), /* 내부 테두리 */
+              0 0 0 10px rgba(var(--text-color-rgb), 0.1), /* 중간 테두리 */
+              0 0 20px rgba(var(--text-color-rgb), 0.3); /* 바깥 그림자 */
+  transition: all 0.3s ease-in-out;
+}
+
+.template18 .highlight-image-container:hover {
+  box-shadow: 0 0 0 5px rgba(var(--text-color-rgb), 0.3),
+              0 0 0 15px rgba(var(--text-color-rgb), 0.2),
+              0 0 30px rgba(var(--text-color-rgb), 0.5);
+  transform: scale(1.02);
+}
+
+.template18 .highlight-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template18 .caption {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+/* 텍스트 색상 변수에서 RGB 추출 (app.js에서 설정될 예정) */
+/* --text-color-rgb 변수는 app.js에서 동적으로 설정되어야 합니다. */
+/* 예: --text-color: #000000; -> --text-color-rgb: 0, 0, 0; */
+.section {
+  --text-color-rgb: 0, 0, 0; /* 기본값 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template18 .highlight-image-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ✅ Template 19 - 이미지 데코레이션 (스티커/배지 효과) */
+.template19 {
+  text-align: center;
+}
+
+.template19 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template19 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template19 .decorated-image-container {
+  width: 280px; /* 이미지 컨테이너 크기 */
+  height: 200px;
+  margin: 0 auto 20px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.template19 .decorated-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template19 .sticker {
+  position: absolute;
+  top: 15px; /* 상단에서 15px */
+  right: 15px; /* 우측에서 15px */
+  background-color: #FF5722; /* 강조 색상 */
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transform: rotate(10deg); /* 약간 회전 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.template19 .caption {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template19 .decorated-image-container {
+    width: 240px;
+    height: 180px;
+  }
+  .template19 .sticker {
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ✅ Template 20 - 이미지 데코레이션 (리본 배지) */
+.template20 {
+  text-align: center;
+}
+
+.template20 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template20 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template20 .decorated-image-container {
+  width: 280px;
+  height: 200px;
+  margin: 0 auto 20px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.template20 .decorated-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template20 .ribbon {
+  position: absolute;
+  top: 15px; /* 상단에서 15px */
+  right: -25px; /* 우측에서 -25px (절반 정도 튀어나오게) */
+  padding: 5px 10px;
+  background-color: #f44336; /* 리본 색상 */
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  transform: rotate(45deg); /* 45도 회전 */
+  width: 100px; /* 리본 너비 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* 리본 꼬리 부분 (가상 요소로 구현) */
+.template20 .ribbon::before {
+  content: '';
+  position: absolute;
+  bottom: -8px; /* 리본 아래쪽으로 */
+  left: 0;
+  border-top: 8px solid #d32f2f; /* 리본 그림자 색상 */
+  border-right: 8px solid transparent;
+}
+
+.template20 .ribbon::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; /* 리본 아래쪽으로 */
+  right: 0;
+  border-top: 8px solid #d32f2f; /* 리본 그림자 색상 */
+  border-left: 8px solid transparent;
+}
+
+.template20 .caption {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template20 .decorated-image-container {
+    width: 240px;
+    height: 180px;
+  }
+  .template20 .ribbon {
+    top: 12px;
+    right: -20px;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    width: 80px;
+  }
+}
+
+/* ✅ Template 21 - 이미지 데코레이션 (핀 고정 효과) */
+.template21 {
+  text-align: center;
+}
+
+.template21 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template21 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template21 .decorated-image-container {
+  width: 280px;
+  height: 200px;
+  margin: 0 auto 20px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.template21 .decorated-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template21 .pin {
+  position: absolute;
+  top: -15px; /* 이미지 위로 더 나오도록 */
+  left: 50%;
+  transform: translateX(-50%) rotate(-15deg); /* 중앙 정렬 및 회전 */
+  width: 35px; /* 핀 크기 약간 키움 */
+  height: 35px;
+  background-color: #E91E63; /* 핀 색상 */
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 그림자 강화 */
+  z-index: 2;
+}
+
+.template21 .pin::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px; /* 핀 중앙 크기 약간 키움 */
+  height: 10px;
+  background-color: #C2185B; /* 핀 중앙 색상 */
+  border-radius: 50%;
+}
+
+.template21 .caption {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template21 .decorated-image-container {
+    width: 240px;
+    height: 180px;
+  }
+  .template21 .pin {
+    width: 30px;
+    height: 30px;
+    top: -12px;
+  }
+  .template21 .pin::before {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* ✅ Template 22 - 이미지 데코레이션 (원형 스탬프) */
+.template22 {
+  text-align: center;
+}
+
+.template22 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template22 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template22 .decorated-image-container {
+  width: 280px;
+  height: 200px;
+  margin: 0 auto 20px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.template22 .decorated-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template22 .stamp {
+  position: absolute;
+  bottom: 10px; /* 하단에서 10px */
+  left: 10px; /* 좌측에서 10px */
+  width: 80px;
+  height: 80px;
+  background-color: #2196F3; /* 스탬프 색상 */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: rotate(-20deg); /* 약간 회전 */
+  z-index: 1;
+}
+
+.template22 .caption {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-top: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template22 .decorated-image-container {
+    width: 240px;
+    height: 180px;
+  }
+  .template22 .stamp {
+    width: 70px;
+    height: 70px;
+    font-size: 1rem;
+    bottom: 8px;
+    left: 8px;
+  }
+}
+
+/* ✅ Template 23 - 2x2 이미지 그리드 + 짧은 설명 */
+.template23 {
+  text-align: center;
+}
+
+.template23 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template23 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template23 .image-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 그리드 */
+  gap: 20px;
+}
+
+.template23 .grid-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.template23 .grid-item img {
+  width: 100%;
+  height: 120px; /* 이미지 높이 고정 */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.template23 .grid-caption {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template23 .image-grid-2x2 {
+    grid-template-columns: 1fr; /* 모바일에서는 1단으로 */
+  }
+}
+
+/* ✅ Template 24 - 대형 숫자 강조 + 텍스트 설명 */
+.template24 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+}
+
+.template24 .number-highlight-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.template24 .number-box {
+  display: flex;
+  align-items: flex-start;
+  color: var(--text-color);
+}
+
+.template24 .large-number {
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.template24 .unit {
+  font-size: 2.5rem;
+  font-weight: bold;
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+.template24 .text-content {
+  max-width: 200px;
+  text-align: left;
+}
+
+.template24 .text-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.template24 .text-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template24 {
+    flex-direction: column;
+    text-align: center;
+  }
+  .template24 .number-highlight-container {
+    flex-direction: row; /* 숫자는 여전히 가로로 */
+    justify-content: center;
+  }
+  .template24 .text-content {
+    max-width: 90%;
+    text-align: center;
+  }
+}
+
+/* ✅ Template 25 - 이미지 + 텍스트 오버랩 (모던한 비대칭) */
+.template25 {
+  position: relative;
+  padding: 0; /* 섹션 자체 패딩 제거 */
+  height: 400px; /* 섹션 높이 고정 */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* 텍스트 카드를 우측에 배치 */
+}
+
+.template25 .image-overlap-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%; /* 이미지 영역이 섹션의 70% 차지 */
+  height: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.template25 .image-overlap-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template25 .text-overlap-card {
+  position: relative; /* z-index를 위해 필요 */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 18px;
+  width: 60%; /* 텍스트 카드 너비 */
+  margin-right: 20px; /* 섹션 우측과의 여백 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  text-align: left;
+}
+
+.template25 .text-overlap-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.template25 .text-overlap-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template25 {
+    flex-direction: column;
+    height: auto; /* 높이 자동 조절 */
+    padding: 20px;
+  }
+  .template25 .image-overlap-area {
+    position: relative; /* 절대 위치 해제 */
+    width: 100%;
+    height: 250px; /* 이미지 높이 고정 */
+    margin-bottom: 20px;
+  }
+  .template25 .text-overlap-card {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+/* ✅ Template 26 - 텍스트 중심의 인용구/슬로건 강조 */
+.template26 {
+  text-align: center;
+  padding: 60px 30px;
+}
+
+.template26 .quote-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.template26 .quote-text {
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.template26 .quote-author {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template26 .quote-text {
+    font-size: 1.4rem;
+  }
+  .template26 .quote-author {
+    font-size: 1rem;
+  }
+}
+
+/* ✅ Template 27 - 단계별 프로세스/사용법 안내 */
+.template27 {
+  text-align: center;
+}
+
+.template27 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template27 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template27 .process-steps {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.template27 .step-item {
+  flex: 1;
+  min-width: 180px;
+  max-width: 30%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.template27 .step-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #6a5acd; /* 강조 색상 */
+  margin-bottom: 15px;
+}
+
+.template27 .step-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.template27 .step-item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.template27 .step-item p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template27 .process-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .template27 .step-item {
+    max-width: 90%;
+  }
+}
+
+/* ✅ Template 28 - 원형 이미지 갤러리 */
+.template28 {
+  text-align: center;
+}
+
+.template28 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template28 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template28 .circle-image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+}
+
+.template28 .circle-gallery-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.template28 .circle-gallery-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.template28 .circle-gallery-item p {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template28 .circle-image-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ✅ Template 29 - 이미지 배경 + 중앙에 투명한 텍스트 블록 */
+.template29 {
+  position: relative;
+  padding: 0;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.template29 .background-image-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.template29 .background-image-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.template29 .center-text-overlay {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 18px;
+  max-width: 70%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.template29 .center-text-overlay h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: black; /* 가독성을 위해 항상 검정색으로 고정 */
+}
+
+.template29 .center-text-overlay p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: black; /* 가독성을 위해 항상 검정색으로 고정 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template29 {
+    height: 350px;
+  }
+  .template29 .center-text-overlay {
+    max-width: 90%;
+    padding: 20px;
+  }
+  .template29 .center-text-overlay h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ✅ Template 30 - 제품 스펙 비교 테이블 */
+.template30 {
+  text-align: center;
+}
+
+.template30 h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.template30 .description {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.template30 .specs-comparison-table {
+  overflow-x: auto; /* 테이블이 넘칠 경우 스크롤 */
+}
+
+.template30 table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  overflow: hidden; /* border-radius 적용을 위해 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.template30 th,
+.template30 td {
+  padding: 12px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: left;
+  color: var(--text-color);
+}
+
+.template30 thead th {
+  background-color: rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.template30 tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .template30 th,
+  .template30 td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
