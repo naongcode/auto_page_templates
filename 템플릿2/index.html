@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세 페이지 (출력용)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="theme-picker">
+    <div class="template-buttons">
+      <button onclick="location.href='../index.html'">템플릿 1</button>
+      <button onclick="location.href='index.html'">템플릿 2</button>
+    </div>
+  </header>
+
+    <section class="product-detail">
+
+        <!-- Hero Section: 가장 중요한 메시지를 강조 -->
+        <div class="product-section hero reverse-order">
+            <div class="content-text">
+                <h2>The Essence of<br>Modern Design</h2>
+                <p>
+                    우리의 제품은 단순한 오브제를 넘어, 당신의 공간과 일상에 완벽하게 스며드는 디자인 철학을 담았습니다.
+                </p>
+                <ul>
+                    <li>100% 지속가능한 프리미엄 소재</li>
+                    <li>장인의 손길로 완성된 정교한 디테일</li>
+                    <li>시대를 초월하는 미니멀리즘 디자인</li>
+                </ul>
+            </div>
+            <div class="content-image">
+                <img src="product3.jpg" alt="제품의 핵심 가치를 보여주는 이미지">
+            </div>
+        </div>
+
+        <!-- Feature Section 1 -->
+        <div class="product-section">
+            <div class="content-text">
+                <h2>Innovative<br>Functionality</h2>
+                <p>
+                    최신 기술을 접목하여 이전에는 경험할 수 없었던 편리함과 효율성을 제공합니다. 당신의 삶을 더 스마트하게 만들어보세요.
+                </p>
+                <p>
+                    <strong>특허받은 쿨링 시스템:</strong> 3초 만에 최적 온도에 도달하며, 기존 모델 대비 에너지 효율을 40% 개선했습니다.
+                </p>
+            </div>
+            <div class="content-image">
+                <img src="product3.jpg" alt="제품의 혁신적인 기능을 설명하는 이미지">
+            </div>
+        </div>
+
+        <!-- Feature Section 2 -->
+        <div class="product-section reverse-order">
+            <div class="content-text">
+                <h2>Designed for<br>Your Lifestyle</h2>
+                <p>
+                    어떤 공간, 어떤 순간에도 자연스럽게 어우러집니다. 당신의 라이프스타일에 맞춰진 유연하고 실용적인 디자인을 만나보세요.
+                </p>
+                <p>
+                    가벼운 무게와 컴팩트한 사이즈로 이동이 자유로우며, 실내외 어디서든 최상의 성능을 발휘합니다.
+                </p>
+            </div>
+            <div class="content-image">
+                <img src="product3.jpg" alt="다양한 라이프스타일에서의 제품 활용 예시">
+            </div>
+        </div>
+
+        <!-- Icon Feature Grid Section -->
+        <div class="product-section feature-grid">
+            <div class="grid-item">
+                <div class="icon">⚙️</div>
+                <h3>Precision Engineering</h3>
+                <p>오차 없는 정밀 설계로 완벽한 성능을 구현합니다.</p>
+            </div>
+            <div class="grid-item">
+                <div class="icon">🌿</div>
+                <h3>Eco-Friendly</h3>
+                <p>자연을 생각하는 지속 가능한 소재만을 사용합니다.</p>
+            </div>
+            <div class="grid-item">
+                <div class="icon">💧</div>
+                <h3>Water-Resistant</h3>
+                <p>생활 방수 기능으로 언제 어디서나 안심하고 사용하세요.</p>
+            </div>
+        </div>
+
+        <!-- Full-width Quote Section -->
+        <div class="full-width-quote" style="background-image: url('product3.jpg');">
+            <blockquote>
+                "디자인은 어떻게 보이고 느껴지느냐의 문제가 아니다. 어떻게 작동하느냐의 문제다."
+                <span>- Steve Jobs</span>
+            </blockquote>
+        </div>
+
+        <!-- Card Gallery Section -->
+        <div class="product-section gallery-section">
+            <h2>Gallery & Lifestyle</h2>
+            <div class="gallery-cards">
+                <div class="card">
+                    <img src="product3.jpg" alt="갤러리 이미지 1">
+                    <div class="card-content">
+                        <h4>Urban Explorer</h4>
+                        <p>도시의 어떤 환경에도 자연스럽게 녹아듭니다.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="product3.jpg" alt="갤러리 이미지 2">
+                    <div class="card-content">
+                        <h4>Minimalist Home</h4>
+                        <p>미니멀한 인테리어를 완성하는 디자인.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="product3.jpg" alt="갤러리 이미지 3">
+                    <div class="card-content">
+                        <h4>Outdoor Adventure</h4>
+                        <p>거친 아웃도어 활동에도 문제 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Steps Section -->
+        <div class="product-section steps-section">
+            <h2>How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Unbox & Setup</h3>
+                        <p>상자에서 꺼내 전원을 연결하기만 하면 준비 완료!</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Connect Device</h3>
+                        <p>스마트폰 앱을 통해 기기를 손쉽게 연결하세요.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Enjoy</h3>
+                        <p>놀라운 기능들을 마음껏 즐기세요.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Spec Table Section -->
+        <div class="product-section spec-table-section">
+            <h2>Technical Specs</h2>
+            <table class="spec-table">
+                <tbody>
+                    <tr>
+                        <td>Model</td>
+                        <td>Gemini-X1</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensions</td>
+                        <td>120mm x 80mm x 30mm</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>280g</td>
+                    </tr>
+                    <tr>
+                        <td>Material</td>
+                        <td>Recycled Aluminum, Gorilla Glass</td>
+                    </tr>
+                    <tr>
+                        <td>Battery</td>
+                        <td>Up to 12 hours</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 3. Before & After Section -->
+        <div class="product-section comparison-section">
+            <h2>Visible Difference</h2>
+            <div class="comparison-container">
+                <div class="comparison-image">
+                    <img src="product3.jpg" alt="Before">
+                    <div class="comparison-label">Before</div>
+                </div>
+                <div class="comparison-image">
+                    <img src="product3.jpg" alt="After">
+                    <div class="comparison-label after">After</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Team Section -->
+        <div class="product-section team-section">
+            <h2>Meet the Makers</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="product3.jpg" alt="Team member 1">
+                    <h3>Olivia Chen</h3>
+                    <p>Lead Designer</p>
+                </div>
+                <div class="team-member">
+                    <img src="product3.jpg" alt="Team member 2">
+                    <h3>Ben Carter</h3>
+                    <p>Head of Engineering</p>
+                </div>
+                <div class="team-member">
+                    <img src="product3.jpg" alt="Team member 3">
+                    <h3>Aisha Khan</h3>
+                    <p>Product Manager</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. FAQ Section -->
+        <div class="product-section faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">Q. 제품 보증 기간은 어떻게 되나요?</h3>
+                    <p class="faq-answer">A. 모든 제품은 구매일로부터 2년간 무상 보증을 지원합니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Q. 배터리 교체가 가능한가요?</h3>
+                    <p class="faq-answer">A. 네, 공식 서비스 센터를 통해 배터리 교체 서비스를 받으실 수 있습니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Q. 해외에서도 사용할 수 있나요?</h3>
+                    <p class="faq-answer">A. 프리볼트 제품으로, 전 세계 어디서든 사용 가능합니다. (국가별 플러그 어댑터 필요)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Fullscreen Background Image Section -->
+        <div class="fullscreen-hero-image" style="background-image: url('product3.jpg');">
+            <div class="hero-content">
+                <h1>Unleash Your Potential</h1>
+                <p>혁신적인 기술로 당신의 한계를 뛰어넘으세요.</p>
+            </div>
+        </div>
+
+        <!-- 2. Two Column Image Gallery Section -->
+        <div class="product-section two-column-gallery">
+            <h2>Explore Every Angle</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="product3.jpg" alt="제품 측면">
+                    <p>세련된 측면 디자인</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="product3.jpg" alt="제품 후면">
+                    <p>견고한 후면 마감</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Three Column Image Grid Section -->
+        <div class="product-section three-column-grid">
+            <h2>Versatile Usage</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="product3.jpg" alt="사용 예시 1">
+                    <p>사무실 환경</p>
+                </div>
+                <div class="grid-item">
+                    <img src="product3.jpg" alt="사용 예시 2">
+                    <p>야외 활동</p>
+                </div>
+                <div class="grid-item">
+                    <img src="product3.jpg" alt="사용 예시 3">
+                    <p>가정에서</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Static Image Carousel Section -->
+        <div class="product-section image-carousel-static">
+            <h2>A Closer Look</h2>
+            <div class="carousel-container">
+                <img src="product3.jpg" alt="캐러셀 이미지 1">
+                <img src="product3.jpg" alt="캐러셀 이미지 2">
+                <img src="product3.jpg" alt="캐러셀 이미지 3">
+            </div>
+        </div>
+
+        <!-- 5. Product Detail Zoom Section -->
+        <div class="product-section product-detail-zoom">
+            <div class="zoom-image">
+                <img src="product3.jpg" alt="제품 상세 확대">
+            </div>
+            <div class="zoom-content">
+                <h2>Unrivaled Craftsmanship</h2>
+                <p>정교하게 가공된 알루미늄 바디와 레이저 커팅된 에지 마감은 제품의 품격을 한층 높여줍니다. 작은 디테일 하나까지 놓치지 않았습니다.</p>
+                <ul>
+                    <li>CNC 정밀 가공</li>
+                    <li>아노다이징 표면 처리</li>
+                    <li>인체공학적 그립감</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 1. Diagonal Background Section -->
+        <div class="diagonal-section">
+            <div class="diagonal-content">
+                <h2>A New Perspective</h2>
+                <p>기존의 틀을 깨는 혁신적인 접근 방식으로 새로운 가능성을 제시합니다.</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+
+        <!-- 2. Overlapping Layout Section -->
+        <div class="product-section overlapping-layout">
+            <div class="overlap-image">
+                <img src="product3.jpg" alt="겹쳐진 레이아웃 이미지">
+            </div>
+            <div class="overlap-text-box">
+                <h3>Creative Synergy</h3>
+                <p>이미지와 텍스트의 창의적인 조화는 메시지를 더욱 강력하게 전달합니다.</p>
+            </div>
+        </div>
+
+        <!-- 3. Vertical Timeline Section -->
+        <div class="product-section timeline-section">
+            <h2>Our Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h3>Concept & Idea</h3>
+                        <p>혁신적인 아이디어의 탄생</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3>Design & Develop</h3>
+                        <p>수많은 시행착오 끝에 완성된 디자인</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h3>Launch</h3>
+                        <p>세상에 우리의 결과물을 선보입니다</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Big Typography Section -->
+        <div class="product-section big-typography-section">
+            <div class="big-text">BOLD</div>
+            <div class="foreground-content">
+                <img src="product3.jpg" alt="큰 타이포그래피 위 이미지">
+                <p><strong>과감하고 독창적인 디자인</strong>으로 시선을 압도합니다.</p>
+            </div>
+        </div>
+
+        <!-- 5. Split Screen Section -->
+        <div class="split-screen-section">
+            <div class="split-left" style="background-image: url('product3.jpg');">
+                <div class="split-content">
+                    <h3>For Work</h3>
+                    <p>업무의 효율성을 극대화합니다.</p>
+                </div>
+            </div>
+            <div class="split-right">
+                <div class="split-content">
+                    <h3>For Play</h3>
+                    <p>일상에 즐거움을 더합니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 1. Polaroid Sticker Section -->
+        <div class="product-section polaroid-section">
+            <h2>Our Moments</h2>
+            <div class="polaroid-container">
+                <div class="polaroid" style="transform: rotate(-8deg);">
+                    <img src="product3.jpg" alt="폴라로이드 사진 1">
+                    <p>Happy Times</p>
+                </div>
+                <div class="polaroid" style="transform: rotate(5deg); z-index: 2; top: 20px;">
+                    <img src="product3.jpg" alt="폴라로이드 사진 2">
+                    <p>Sweet Memory</p>
+                </div>
+                <div class="polaroid" style="transform: rotate(15deg); left: -20px;">
+                    <img src="product3.jpg" alt="폴라로이드 사진 3">
+                    <p>Best Shot</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Image Cutout & Text Wrapping Section -->
+        <div class="product-section cutout-section">
+            <img src="product3.jpg" alt="배경이 제거된 제품 이미지" class="cutout-image">
+            <h2>Perfectly Shaped</h2>
+            <p>독보적인 디자인은 어떤 공간에서도 그 존재감을 드러냅니다. 유려한 곡선과 정교한 마감은 장인정신의 결과물입니다. 텍스트는 이미지의 형태를 따라 자연스럽게 흐르며, 시각적인 즐거움을 선사합니다. 이처럼 제품과 콘텐츠의 조화는 사용자에게 더욱 깊은 인상을 남깁니다.</p>
+            <p>우리는 사용자의 경험을 최우선으로 생각하며, 모든 디테일에 의미를 부여합니다. 제품을 사용하는 매 순간이 특별해지도록 디자인했습니다.</p>
+        </div>
+
+        <!-- 3. Neon Sign Text Overlay Section -->
+        <div class="neon-text-section" style="background-image: url('product3.jpg');">
+            <h2 class="neon-text">DARE TO BE BOLD</h2>
+        </div>
+
+        <!-- 4. Scrapbook/Collage Style Section -->
+        <div class="product-section scrapbook-section">
+            <div class="scrapbook-item item1">
+                <img src="product3.jpg" alt="스크랩북 이미지 1">
+                <div class="tape"></div>
+            </div>
+            <div class="scrapbook-item item2">
+                <p>Hand-crafted with love & care.</p>
+            </div>
+            <div class="scrapbook-item item3">
+                <img src="product3.jpg" alt="스크랩북 이미지 2">
+            </div>
+            <div class="scrapbook-item item4">
+                <p>#MyFavorite</p>
+            </div>
+        </div>
+
+        <!-- 5. Magnifying Glass Effect Section -->
+        <div class="product-section magnifying-glass-section">
+            <div class="magnify-image-container">
+                <img src="product3.jpg" alt="확대할 이미지" class="base-image">
+                <div class="magnifying-glass" style="background-image: url('product3.jpg');"></div>
+            </div>
+            <div class="magnify-content">
+                <h2>See the Detail</h2>
+                <p>최고급 소재의 질감과 정교한 마감을 직접 확인해보세요. 작은 차이가 명품을 만듭니다.</p>
+            </div>
+        </div>
+
+        <!-- 1. Torn Paper Edge Section -->
+        <div class="product-section torn-paper-section">
+            <div class="torn-paper-content">
+                <h2>Raw & Real</h2>
+                <p>가공되지 않은 순수한 본질에 집중합니다.</p>
+            </div>
+        </div>
+
+        <!-- 2. Film Strip Layout Section -->
+        <div class="product-section film-strip-section">
+            <div class="film-strip">
+                <div class="film-frame"><img src="product3.jpg" alt="Film 1"></div>
+                <div class="film-frame"><img src="product3.jpg" alt="Film 2"></div>
+                <div class="film-frame"><img src="product3.jpg" alt="Film 3"></div>
+            </div>
+        </div>
+
+        <!-- 1. Static Accordion Gallery -->
+        <div class="product-section accordion-gallery-section">
+            <div class="accordion-item" style="background-image: url('product3.jpg');"><div class="accordion-title">Design</div></div>
+            <div class="accordion-item active" style="background-image: url('product3.jpg');"><div class="accordion-title">Technology</div></div>
+            <div class="accordion-item" style="background-image: url('product3.jpg');"><div class="accordion-title">Material</div></div>
+            <div class="accordion-item" style="background-image: url('product3.jpg');"><div class="accordion-title">Lifestyle</div></div>
+        </div>
+
+        <!-- 2. Magazine Layout Section -->
+        <div class="product-section magazine-layout-section">
+            <div class="mag-item-1"><img src="product3.jpg" alt="Magazine Image 1"></div>
+            <div class="mag-item-2"><h2>Urban<br>Explorer</h2></div>
+            <div class="mag-item-3"><p>도시의 소음 속에서도 당신의 리듬을 찾아보세요. 최고의 기술과 디자인이 함께합니다.</p></div>
+            <div class="mag-item-4"><img src="product3.jpg" alt="Magazine Image 2"></div>
+        </div>
+
+        <!-- 3. SVG Clip Path Section -->
+        <div class="product-section svg-clip-path-section">
+            <svg width="0" height="0">
+                <defs>
+                    <clipPath id="clip-star" clipPathUnits="objectBoundingBox">
+                        <polygon points="0.5 0, 0.61 0.35, 0.98 0.35, 0.68 0.57, 0.79 0.91, 0.5 0.7, 0.21 0.91, 0.32 0.57, 0.02 0.35, 0.39 0.35" />
+                    </clipPath>
+                </defs>
+            </svg>
+            <div class="clipped-image"></div>
+            <div class="clipped-content"><h2>Shine Like a Star</h2></div>
+        </div>
+
+        <!-- 4. Panorama Wide Image Section -->
+        <div class="panorama-section">
+            <div class="panorama-image" style="background-image: url('product3.jpg');"></div>
+            <div class="panorama-title">A Whole New World</div>
+        </div>
+
+        <!-- 6. Tiled Masonry Gallery Section -->
+        <div class="product-section masonry-gallery-section">
+            <h2>Random Moments</h2>
+            <div class="masonry-grid">
+                <div class="masonry-item"><img src="product3.jpg" alt="Masonry 1"></div>
+                <div class="masonry-item"><img src="product3.jpg" alt="Masonry 2"></div>
+                <div class="masonry-item"><img src="product3.jpg" alt="Masonry 3"></div>
+                <div class="masonry-item"><img src="product3.jpg" alt="Masonry 4"></div>
+                <div class="masonry-item"><img src="product3.jpg" alt="Masonry 5"></div>
+            </div>
+        </div>
+
+        <!-- 7. Spotlight Effect Section -->
+        <div class="spotlight-section">
+            <div class="spotlight-content">
+                <h2>Focus on<br>What Matters</h2>
+                <p>가장 중요한 본질에만 집중했습니다.</p>
+            </div>
+        </div>
+
+        <!-- 8. Origami/Paper Fold Style Section -->
+        <div class="product-section origami-section">
+            <div class="origami-image" style="background-image: url('product3.jpg');"></div>
+            <div class="origami-overlay"></div>
+            <div class="origami-text">
+                <h3>Folded<br>Perfection</h3>
+            </div>
+        </div>
+
+        <!-- 9. Infographic Style Section -->
+        <div class="product-section infographic-section">
+            <div class="info-item">
+                <div class="info-icon">📈</div>
+                <div class="info-text"><h3>+70%</h3><p>Performance</p></div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">🔋</div>
+                <div class="info-text"><h3>2x</h3><p>Battery Life</p></div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">💨</div>
+                <div class="info-text"><h3>-30%</h3><p>Weight</p></div>
+            </div>
+        </div>
+
+        <!-- 10. Video Overlay Section (Static) -->
+        <div class="video-overlay-section" style="background-image: url('product3.jpg');">
+            <div class="video-play-button">▶</div>
+            <h2 class="video-title">Experience the Motion</h2>
+        </div>
+
+    </section>
+
+</body>
+</html>

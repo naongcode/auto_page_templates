@@ -1,0 +1,1615 @@
+/* Google Fonts에서 'Noto Sans KR'와 'Poppins' 폰트 가져오기 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap');
+
+/* 기본 스타일 및 폰트 설정 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Poppins를 기본 폰트로, 한글은 Noto Sans KR로 fallback */
+    font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f4f7f6; /* 부드러운 배경색 */
+    color: #333;
+}
+
+/* 상단 테마 선택 바 */
+.theme-picker {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.template-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.template-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6a5acd; /* 테마 색상 */
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.template-buttons button:hover {
+  background-color: #5a4acb; /* 호버 시 색상 변경 */
+}
+
+/* 상품 상세 컨테이너 (카드 디자인) */
+.product-detail {
+    width: 860px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    overflow: hidden; /* 내부 요소가 border-radius를 넘지 않도록 */
+}
+
+/* 섹션별 레이아웃 설정 */
+.product-section {
+    display: flex;
+    align-items: center; /* 수직 중앙 정렬 */
+    gap: 50px;
+    padding: 60px;
+    /* 마지막 섹션을 제외하고 하단에 구분선 추가 */
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.product-section:last-of-type {
+    border-bottom: none;
+}
+
+/* 텍스트 영역 */
+.content-text {
+    flex: 1;
+}
+
+.content-text h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 700; /* 더 굵게 */
+    margin-bottom: 15px;
+    color: #2c3e50; /* 깊이 있는 남색 계열 */
+    line-height: 1.3;
+}
+
+.content-text p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.content-text ul {
+    list-style: none; /* 기본 불릿 제거 */
+    padding-left: 0;
+}
+
+.content-text ul li {
+    font-family: 'Noto Sans KR', sans-serif;
+    position: relative;
+    padding-left: 25px; /* 아이콘을 위한 공간 */
+    margin-bottom: 12px;
+    font-size: 1.05em;
+    color: #444;
+}
+
+/* 커스텀 불릿 (체크 아이콘) */
+.content-text ul li::before {
+    content: '✔'; /* 체크 아이콘 */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #3498db; /* 강조 색상 */
+    font-weight: bold;
+}
+
+/* 이미지 영역 */
+.content-image {
+    flex-basis: 400px; /* 이미지 영역 너비 고정 */
+    flex-shrink: 0;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    /* transition: transform 0.3s ease; */ /* 부드러운 효과를 위한 transition */
+}
+
+.content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 교차 배치 (이미지 오른쪽) */
+.reverse-order {
+    flex-direction: row-reverse;
+}
+
+/* 첫 번째 섹션 특별 강조 */
+.product-section.hero {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: #fff;
+    padding: 80px 60px;
+}
+
+.product-section.hero h2 {
+    color: #fff;
+    font-size: 2.8em;
+}
+
+.product-section.hero p {
+    color: #ecf0f1;
+    font-size: 1.2em;
+}
+
+.product-section.hero .content-text ul li {
+    color: #bdc3c7;
+}
+
+.product-section.hero .content-text ul li::before {
+    color: #fff;
+}
+
+.product-section.hero .content-image {
+    border: 3px solid #fff;
+}
+
+/* --- 추가된 섹션 스타일 --- */
+
+/* Feature Grid Section */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+    padding: 80px 60px;
+    background-color: #f8f9fa;
+}
+
+.feature-grid .grid-item .icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.feature-grid .grid-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.feature-grid .grid-item p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Full-width Quote Section */
+.full-width-quote {
+    position: relative;
+    padding: 100px 40px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 스크롤 시 패럴랙스 효과 */
+    color: #fff;
+}
+
+.full-width-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* 어두운 오버레이 */
+}
+
+.full-width-quote blockquote {
+    position: relative;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.8em;
+    font-weight: 300;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.full-width-quote blockquote span {
+    display: block;
+    font-size: 0.7em;
+    font-weight: 400;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+/* Card Gallery Section */
+.gallery-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* h2 제목을 왼쪽 정렬 */
+    background-color: #fff;
+}
+
+.gallery-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.gallery-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.gallery-cards .card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+}
+
+.gallery-cards .card:hover {
+    /* transform: translateY(-5px); */
+    /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); */
+}
+
+.gallery-cards .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-cards .card .card-content {
+    padding: 20px;
+}
+
+.gallery-cards .card h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+.gallery-cards .card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #777;
+    margin-bottom: 0; /* 카드 안의 p 태그는 하단 마진 제거 */
+}
+
+/* --- 5개 추가 섹션 스타일 --- */
+
+/* 1. Steps Section */
+.steps-section {
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+.steps-section h2 {
+    align-self: flex-start;
+    margin-bottom: 40px;
+}
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px;
+}
+.step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+.step-number {
+    font-size: 3em;
+    font-weight: 700;
+    color: #e0e0e0;
+    min-width: 60px;
+    text-align: center;
+}
+.step-content h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.step-content p {
+    font-size: 1em;
+    color: #666;
+    margin: 0;
+}
+
+/* 2. Spec Table Section */
+.spec-table-section {
+    flex-direction: column;
+}
+.spec-table-section h2 {
+    align-self: flex-start;
+    margin-bottom: 30px;
+}
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.spec-table tr {
+    border-bottom: 1px solid #eee;
+}
+.spec-table tr:last-child {
+    border-bottom: none;
+}
+.spec-table td {
+    padding: 15px 10px;
+    font-size: 1.05em;
+}
+.spec-table td:first-child {
+    font-weight: 600;
+    color: #333;
+    width: 30%;
+}
+.spec-table td:last-child {
+    color: #555;
+}
+
+/* 3. Before & After Section */
+.comparison-section {
+    flex-direction: column;
+}
+.comparison-section h2 {
+    align-self: flex-start;
+    margin-bottom: 40px;
+}
+.comparison-container {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+.comparison-image {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.comparison-image img {
+    width: 100%;
+    display: block;
+}
+.comparison-label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+.comparison-label.after {
+    background-color: #3498db;
+}
+
+/* 4. Team Section */
+.team-section {
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+.team-section h2 {
+    margin-bottom: 40px;
+}
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    text-align: center;
+}
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.team-member h3 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+.team-member p {
+    color: #777;
+    margin: 0;
+}
+
+/* 5. FAQ Section */
+.faq-section {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.faq-section h2 {
+    margin-bottom: 30px;
+}
+.faq-container {
+    width: 100%;
+}
+.faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+.faq-question {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+.faq-answer {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* --- 5개 추가 이미지 중심 섹션 스타일 --- */
+
+/* 1. Fullscreen Background Image Section */
+.fullscreen-hero-image {
+    position: relative;
+    width: 100%;
+    height: 500px; /* 이미지 높이 고정 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+.fullscreen-hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* 어두운 오버레이 */
+    z-index: 1;
+}
+.fullscreen-hero-image .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+}
+.fullscreen-hero-image h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+.fullscreen-hero-image p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* 2. Two Column Image Gallery Section */
+.two-column-gallery {
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+.two-column-gallery h2 {
+    margin-bottom: 40px;
+}
+.two-column-gallery .gallery-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+.two-column-gallery .gallery-item {
+    flex: 1;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+.two-column-gallery .gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+.two-column-gallery .gallery-item p {
+    padding: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+}
+
+/* 3. Three Column Image Grid Section */
+.three-column-grid {
+    flex-direction: column;
+}
+.three-column-grid h2 {
+    margin-bottom: 40px;
+}
+.three-column-grid .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+.three-column-grid .grid-item {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+.three-column-grid .grid-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.three-column-grid .grid-item p {
+    padding: 15px;
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+}
+
+/* 4. Static Image Carousel Section */
+.image-carousel-static {
+    flex-direction: column;
+    background-color: #f0f2f5;
+}
+.image-carousel-static h2 {
+    margin-bottom: 40px;
+}
+.image-carousel-static .carousel-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* 스크롤 가능하도록 (JPG 출력 시에는 정적인 모습) */
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 15px; /* 스크롤바 공간 확보 */
+}
+.image-carousel-static .carousel-container img {
+    flex-shrink: 0;
+    width: 400px; /* 이미지 너비 고정 */
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+}
+
+/* 5. Product Detail Zoom Section */
+.product-detail-zoom {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.product-detail-zoom .zoom-image {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.product-detail-zoom .zoom-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.product-detail-zoom .zoom-content {
+    flex: 1;
+}
+.product-detail-zoom .zoom-content h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+.product-detail-zoom .zoom-content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+.product-detail-zoom .zoom-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+.product-detail-zoom .zoom-content ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    color: #444;
+}
+.product-detail-zoom .zoom-content ul li::before {
+    content: '•'; /* 간단한 불릿 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* --- 5개 추가 다양한 디자인 섹션 스타일 --- */
+
+/* 1. Diagonal Background Section */
+.diagonal-section {
+    position: relative;
+    background-color: #f0f2f5;
+    padding: 100px 60px;
+    color: #333;
+    text-align: center;
+    overflow: hidden;
+}
+.diagonal-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    transform: skewY(-4deg);
+    transform-origin: top left;
+    z-index: 0;
+}
+.diagonal-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.diagonal-content h2 {
+    color: #fff;
+    font-size: 2.5em;
+}
+.diagonal-content p {
+    color: #ecf0f1;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+.cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #2980b9;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    /* transition: background-color 0.3s, color 0.3s; */
+}
+.cta-button:hover {
+    /* background-color: #f1c40f; */
+    /* color: #333; */
+}
+
+/* 2. Overlapping Layout Section */
+.overlapping-layout {
+    position: relative;
+    min-height: 450px;
+    align-items: center;
+}
+.overlap-image {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 60%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+.overlap-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overlap-text-box {
+    position: relative;
+    left: 55%;
+    width: 45%;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+.overlap-text-box h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+/* 3. Vertical Timeline Section */
+.timeline-section {
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+.timeline-section h2 {
+    margin-bottom: 50px;
+}
+.timeline-container {
+    position: relative;
+    width: 100%;
+}
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ddd;
+    transform: translateX(-1px);
+}
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 10px 40px;
+    margin-bottom: 40px;
+}
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 3px solid #3498db;
+    border-radius: 50%;
+    z-index: 1;
+}
+.timeline-item:nth-child(odd)::after {
+    right: -8px;
+}
+.timeline-item:nth-child(even)::after {
+    left: -8px;
+}
+.timeline-year {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #3498db;
+    margin-bottom: 5px;
+}
+.timeline-content h3 {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+/* 4. Big Typography Section */
+.big-typography-section {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 400px;
+    overflow: hidden;
+}
+.big-text {
+    position: absolute;
+    font-size: 15em;
+    font-weight: 800;
+    color: #f0f2f5;
+    z-index: 0;
+    user-select: none;
+}
+.foreground-content {
+    position: relative;
+    z-index: 1;
+}
+.foreground-content img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.foreground-content p {
+    font-size: 1.2em;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* 5. Split Screen Section */
+.split-screen-section {
+    display: flex;
+    width: 100%;
+    min-height: 500px;
+    padding: 0;
+    border-bottom: none;
+}
+.split-left, .split-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+    color: #fff;
+}
+.split-left {
+    background-size: cover;
+    background-position: center;
+}
+.split-left::before, .split-right::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+}
+.split-left::before {
+    background-color: rgba(0,0,0,0.4);
+}
+.split-right {
+    background-color: #2c3e50;
+}
+.split-content {
+    position: relative;
+    z-index: 1;
+}
+.split-content h3 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+.split-content p {
+    font-size: 1.2em;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* --- 5개 추가 효과/그래픽 강조 섹션 스타일 --- */
+
+/* 1. Polaroid Sticker Section */
+.polaroid-section {
+    flex-direction: column;
+    background-color: #f0f2f5;
+    overflow: hidden;
+}
+.polaroid-section h2 {
+    margin-bottom: 40px;
+}
+.polaroid-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* 높이 유지 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.polaroid {
+    position: absolute;
+    background: #fff;
+    padding: 15px 15px 30px 15px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    /* transition: transform 0.3s ease; */ /* 애니메이션 제거 */
+}
+/* .polaroid:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    z-index: 10 !important;
+} */
+.polaroid img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+.polaroid p {
+    font-family: 'Caveat', cursive; /* 손글씨 폰트 */
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
+    color: #555;
+}
+.polaroid:nth-child(1) { /* Happy Times */
+    top: 50px;
+    left: 190px; /* 왼쪽 끝 */
+    transform: rotate(-10deg);
+    z-index: 2;
+}
+.polaroid:nth-child(2) { /* Sweet Memory */
+    top: 80px;
+    left: 450px; /* 중앙 */
+    transform: rotate(2deg);
+    z-index: 3;
+}
+.polaroid:nth-child(3) { /* Best Shot */
+    top: 120px;
+    left: 700px; /* 오른쪽 끝 */
+    transform: rotate(8deg);
+    z-index: 1;
+}
+
+/* 2. Image Cutout & Text Wrapping Section */
+.cutout-section {
+    display: block; /* float을 위해 flex 대신 block 사용 */
+}
+.cutout-image {
+    float: left;
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* 실제로는 배경이 투명한 png 사용 권장 */
+    border-radius: 50%; /* 예시: 원형으로 잘라낸 효과 */
+    margin-right: 40px;
+    margin-bottom: 20px;
+    shape-outside: circle(50%); /* 텍스트가 원형을 따라 흐르도록 */
+}
+.cutout-section h2 {
+    margin-bottom: 20px;
+}
+
+/* 3. Neon Sign Text Overlay Section */
+.neon-text-section {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,0.5);
+}
+.neon-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 4em;
+    color: #fff;
+    text-align: center;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #f09,
+        0 0 30px #f09,
+        0 0 40px #f09,
+        0 0 55px #f09,
+        0 0 75px #f09;
+}
+
+/* 4. Scrapbook/Collage Style Section */
+.scrapbook-section {
+    position: relative;
+    height: 500px;
+    background-color: #fdf5e6; /* 스크랩북 종이 느낌 */
+    overflow: hidden;
+}
+.scrapbook-item {
+    position: absolute;
+}
+.scrapbook-item.item1 {
+    top: 50px;
+    left: 100px;
+    transform: rotate(-10deg);
+}
+.scrapbook-item.item1 img {
+    width: 300px;
+    border: 10px solid #fff;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
+.tape {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 100px;
+    height: 30px;
+    background-color: rgba(255, 228, 196, 0.7);
+    transform: translateX(-50%) rotate(5deg);
+    border-left: 1px dashed rgba(0,0,0,0.1);
+    border-right: 1px dashed rgba(0,0,0,0.1);
+}
+.scrapbook-item.item2 {
+    top: 150px;
+    right: 150px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.8em;
+    transform: rotate(8deg);
+    color: #5a5a5a;
+}
+.scrapbook-item.item3 {
+    bottom: 50px;
+    left: 200px;
+    transform: rotate(12deg);
+}
+.scrapbook-item.item3 img {
+    width: 200px;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
+.scrapbook-item.item4 {
+    bottom: 80px;
+    right: 100px;
+    background: #ffc;
+    padding: 10px;
+    font-size: 1.2em;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transform: rotate(-5deg);
+}
+
+/* 5. Magnifying Glass Effect Section */
+.magnifying-glass-section {
+    align-items: center;
+    gap: 50px;
+}
+.magnify-image-container {
+    position: relative;
+    flex-basis: 50%;
+}
+.base-image {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+.magnifying-glass {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    background-repeat: no-repeat;
+    /* JavaScript로 background-position을 조절해야 하지만, 여기서는 고정된 위치를 보여줌 */
+    background-position: -50px -50px; 
+    background-size: 800px; /* 원본 이미지 크기의 약 2배 */
+}
+.magnify-content {
+    flex-basis: 50%;
+}
+.magnify-content h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+.magnify-content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/* --- 10개 추가 창의적인 디자인 섹션 스타일 --- */
+
+/* 1. Torn Paper Edge Section */
+.torn-paper-section {
+    background-color: #333;
+    padding: 80px 60px;
+    text-align: center;
+    color: #fff;
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><filter id="filter"><feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="3" seed="1" stitchTiles="stitch" result="turbulence" /><feDisplacementMap in="SourceGraphic" in2="turbulence" scale="30" xChannelSelector="R" yChannelSelector="G" result="displacement" /></filter></defs><rect width="100%" height="100%" filter="url(%23filter)" /></svg>');
+    mask-size: cover;
+    mask-position: center;
+}
+.torn-paper-content h2 {
+    font-size: 2.8em;
+}
+
+/* 2. Film Strip Layout Section */
+.film-strip-section {
+    background-color: #222;
+    padding: 60px 0;
+    overflow: hidden;
+}
+.film-strip {
+    display: flex;
+    width: 100%; /* 부모 컨테이너 너비에 맞춤 */
+    gap: 20px; /* 필름 프레임 사이 간격 */
+    justify-content: space-between; /* 프레임들을 균등하게 배치 */
+}
+.film-frame {
+    flex-shrink: 0;
+    flex-basis: calc((100% - 40px) / 3); /* 3개 프레임이 20px 갭 2개를 제외한 공간을 꽉 채우도록 */
+    padding: 20px;
+    background: #111;
+    /* margin: 0 10px; */ /* gap으로 대체 */
+    border-radius: 5px;
+    position: relative;
+}
+.film-frame::before, .film-frame::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    height: 10px;
+    background: repeating-linear-gradient(90deg, #333, #333 4px, transparent 4px, transparent 8px);
+}
+.film-frame::before { top: 5px; }
+.film-frame::after { bottom: 5px; }
+.film-frame img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+/* @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+} */
+
+/* 3. Stamp/Watermark Effect Section */
+.stamp-effect-section {
+    align-items: center;
+    gap: 40px;
+}
+.stamp-image-container {
+    position: relative;
+    flex-basis: 50%;
+}
+.stamp-image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+.stamp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    font-size: 3em;
+    font-weight: 800;
+    color: rgba(255, 0, 0, 0.7);
+    border: 5px solid rgba(255, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    user-select: none;
+}
+.stamp-content {
+    flex-basis: 50%;
+}
+
+/* 4. Gradient Text & Image Overlay Section */
+.gradient-text-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    overflow: hidden;
+}
+.gradient-text-section img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.gradient-text {
+    position: relative;
+    font-size: 8em;
+    font-weight: 800;
+    background: linear-gradient(45deg, #f3ec78, #af4261);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    mix-blend-mode: screen;
+}
+
+/* 5. Reflection Effect Image Section */
+.reflection-effect-section {
+    flex-direction: column;
+    background: #111;
+    color: #fff;
+}
+.reflection-effect-section h2 {
+    color: #fff;
+    margin-bottom: 40px;
+}
+.reflection-container {
+    position: relative;
+}
+.reflection-container img {
+    display: block;
+    width: 400px;
+    border-radius: 10px;
+}
+.reflection {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-image: url('product3.jpg');
+    background-size: cover;
+    transform: scaleY(-1);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
+}
+
+/* 6. Static 3D Card Flip Effect Section */
+.card-flip-section {
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+    background-color: #f0f2f5;
+}
+.flip-card-container {
+    perspective: 1000px;
+}
+.flip-card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    transform-style: preserve-3d;
+    transform: rotateY(25deg);
+    /* transition: transform 0.5s; */
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.flip-card-back {
+    background: #333;
+    color: #fff;
+    padding: 30px;
+    transform: rotateY(180deg);
+}
+
+/* 7. Brush Stroke Background Section */
+.brush-stroke-section {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 400px;
+    background-image: url("data:image/svg+xml,%3Csvg width='800' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.5' numOctaves='3' result='t'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='t' scale='30'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='%233498db'/%3E%3Crect width='100%25' height='100%25' fill='%23ecf0f1' filter='url(%23f)'/%3E%3C/svg%3E");
+    background-size: cover;
+}
+.brush-stroke-content {
+    background: rgba(255,255,255,0.8);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/* 8. Mosaic/Pixelation Effect Section */
+.mosaic-effect-section {
+    flex-direction: column;
+}
+.mosaic-container {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    margin: 0 auto;
+}
+.mosaic-original, .mosaic-pixelated {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.mosaic-pixelated {
+    image-rendering: pixelated;
+    clip-path: circle(100px at 70% 50%);
+}
+
+/* 9. Static Lightbox Gallery Section */
+.lightbox-gallery-section {
+    flex-direction: column;
+}
+.lightbox-main {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 15px;
+}
+.lightbox-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.lightbox-thumbnails {
+    display: flex;
+    gap: 10px;
+}
+.lightbox-thumbnails img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+    /* transition: opacity 0.3s; */
+}
+.lightbox-thumbnails img.active, .lightbox-thumbnails img:hover {
+    opacity: 1;
+    border: 2px solid #3498db;
+}
+
+/* 10. Geometric Pattern Background Section */
+.geometric-pattern-section {
+    position: relative;
+    padding: 80px 60px;
+    background-color: #e0e0e0;
+    background-image: linear-gradient(45deg, #c0c0c0 25%, transparent 25%), linear-gradient(-45deg, #c0c0c0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #c0c0c0 75%), linear-gradient(-45deg, transparent 75%, #c0c0c0 75%);
+    background-size: 20px 20px;
+}
+.geo-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.geo-content img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* --- 10개 추가 창의적인 디자인 섹션 스타일 --- */
+
+/* 1. Static Accordion Gallery */
+.accordion-gallery-section {
+    display: flex;
+    height: 400px;
+    padding: 0;
+    overflow: hidden;
+}
+.accordion-item {
+    position: relative;
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    /* transition: flex-grow 0.5s ease; */
+    filter: grayscale(100%);
+}
+.accordion-item.active {
+    flex-grow: 5;
+    filter: grayscale(0%);
+}
+.accordion-title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 600;
+    background: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+}
+
+/* 2. Magazine Layout Section */
+.magazine-layout-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    background: #fff;
+}
+.mag-item-1 { grid-column: 1 / 3; grid-row: 1 / 2; }
+.mag-item-2 { grid-column: 3 / 5; grid-row: 1 / 2; align-self: center; padding: 20px; }
+.mag-item-3 { grid-column: 1 / 3; grid-row: 2 / 3; padding: 20px; }
+.mag-item-4 { grid-column: 3 / 5; grid-row: 2 / 3; }
+.magazine-layout-section img { width: 100%; height: 100%; object-fit: cover; }
+.mag-item-2 h2 { font-size: 3em; line-height: 1.1; }
+
+/* 3. SVG Clip Path Section */
+.svg-clip-path-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f2f5;
+    gap: 40px;
+}
+.clipped-image {
+    width: 350px;
+    height: 350px;
+    background-image: url('product3.jpg');
+    background-size: cover;
+    clip-path: url(#clip-star);
+}
+.clipped-content h2 { font-size: 2.5em; }
+
+/* 4. Panorama Wide Image Section */
+.panorama-section {
+    position: relative;
+    height: 350px;
+    width: 100%;
+    overflow: hidden;
+}
+.panorama-image {
+    width: 150%; /* 이미지 너비를 넓게 */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.panorama-title {
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+    font-size: 2.5em;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* 6. Tiled Masonry Gallery Section */
+.masonry-gallery-section {
+    flex-direction: column;
+}
+.masonry-grid {
+    column-count: 3;
+    column-gap: 15px;
+}
+.masonry-item {
+    margin-bottom: 15px;
+    break-inside: avoid;
+}
+.masonry-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* 7. Spotlight Effect Section */
+.spotlight-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 60%), #111;
+    color: #fff;
+}
+.spotlight-content h2 {
+    font-size: 3em;
+    color: #fff;
+}
+
+/* 8. Origami/Paper Fold Style Section */
+.origami-section {
+    position: relative;
+    height: 400px;
+    padding: 0;
+    background: #f0f2f5;
+}
+.origami-image {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+}
+.origami-overlay {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    clip-path: polygon(75% 100%, 100% 0, 100% 100%);
+}
+.origami-text {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+}
+.origami-text h3 {
+    font-size: 3em;
+    line-height: 1.1;
+}
+
+/* 9. Infographic Style Section */
+.infographic-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+}
+.info-item {
+    text-align: center;
+}
+.info-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+.info-text h3 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #3498db;
+}
+.info-text p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 0;
+}
+
+/* 10. Video Overlay Section (Static) */
+.video-overlay-section {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+.video-overlay-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+}
+.video-play-button {
+    position: relative;
+    font-size: 4em;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 100px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+.video-title {
+    position: relative;
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+
+/* 손글씨 폰트 추가 */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+
+
+
+

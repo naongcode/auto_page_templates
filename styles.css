@@ -24,6 +24,27 @@ body {
   z-index: 10;
 }
 
+.template-buttons {
+  margin-right: auto; /* 버튼들을 왼쪽으로 밀어내고 나머지 요소들을 오른쪽으로 */
+  display: flex;
+  gap: 10px;
+}
+
+.template-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6a5acd; /* 테마 색상 */
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.template-buttons button:hover {
+  background-color: #5a4acb; /* 호버 시 색상 변경 */
+}
+
 #palette {
   display: none;
   gap: 6px;
