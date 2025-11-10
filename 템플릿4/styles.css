@@ -1,0 +1,910 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;700&family=Poor+Story&display=swap');
+
+/*
+font-family: 'Gowun Dodum', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Poor Story', cursive;
+*/
+
+/* 기본 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fdfcf8; /* 부드러운 미색 배경 */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+
+
+/* 상단 테마 선택 바 (기존 유지) */
+.theme-picker {
+    padding: 15px 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.template-buttons button {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #495057;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.template-buttons button:hover,
+.template-buttons button.active {
+    background-color: #5d9c59;
+    color: #ffffff;
+    border-color: #5d9c59;
+}
+
+/* 각 템플릿 시안 공통 스타일 */
+.farm-template {
+    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+}
+
+.template-header {
+    background-color: #f7f5f0;
+    padding: 15px 25px;
+    border-bottom: 1px solid #e9e4d9;
+}
+.template-header h2 {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1.5rem;
+    color: #3e6549;
+    margin-bottom: 5px;
+}
+.template-header p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+
+/* Design 1: The Farmer's Market */
+.market-layout {
+    padding: 30px;
+    background: url('https://www.transparenttextures.com/patterns/wood-pattern.png'), #f3e9d2;
+}
+.market-background {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+}
+.market-chalkboard {
+    background-color: #4a4a4a;
+    color: #fff;
+    font-family: 'Poor Story', cursive;
+    padding: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 5px solid #d2b48c;
+}
+.market-chalkboard h3 {
+    font-size: 2.5rem;
+}
+.market-main-image img {
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.market-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+.market-features {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.market-features li {
+    background-color: #7cb342;
+    color: #fff;
+    font-family: 'Gowun Dodum', sans-serif;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+/* Design 2: The Recipe Card */
+.recipe-layout {
+    display: flex;
+    background-color: #fff9f0;
+    padding: 30px;
+    gap: 30px;
+}
+.recipe-image {
+    flex: 1;
+}
+.recipe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.recipe-content {
+    flex: 1.2;
+    border-left: 2px dashed #e0c9a6;
+    padding-left: 30px;
+}
+.recipe-title {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 2.2rem;
+    color: #bf5a36;
+}
+.recipe-story {
+    font-size: 1rem;
+    color: #665a48;
+    margin-top: 15px;
+    font-style: italic;
+}
+.recipe-divider {
+    height: 1px;
+    background-color: #e0c9a6;
+    margin: 25px 0;
+}
+.recipe-subtitle {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+.recipe-features {
+    list-style: none;
+    font-size: 1rem;
+}
+.recipe-features li {
+    margin-bottom: 8px;
+    color: #555;
+}
+.recipe-features li strong {
+    color: #333;
+}
+.recipe-farmer-note {
+    text-align: right;
+    margin-top: 25px;
+    font-family: 'Poor Story', cursive;
+    font-size: 1.3rem;
+    color: #8c7b60;
+}
+
+/* Design 3: A Day at the Farm */
+.farm-day-layout {
+    text-align: center;
+}
+.farm-day-hero {
+    position: relative;
+}
+.farm-day-hero img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.farm-day-hero h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1.8rem;
+}
+.farm-day-content {
+    padding: 30px;
+}
+.farm-day-content h2 {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 2.5rem;
+    color: #3e6549;
+    margin-bottom: 10px;
+}
+.farm-day-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 25px;
+}
+.farm-day-features {
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+}
+.farm-day-features li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* Design 4: The Picnic Blanket */
+.picnic-layout {
+    padding: 30px;
+    background-color: #e6f2e6;
+    background-image:
+        linear-gradient(rgba(180, 220, 180, 0.5) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(180, 220, 180, 0.5) 50%, transparent 50%);
+    background-size: 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 500px;
+}
+.picnic-note {
+    background-color: #fffacd;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0px #b2a475;
+    border: 1px solid #ccc;
+    transform: rotate(-5deg);
+    width: 45%;
+}
+.picnic-note h3 {
+    font-family: 'Poor Story', cursive;
+    font-size: 2rem;
+    color: #d2691e;
+    text-align: center;
+    border-bottom: 2px dotted #d2691e;
+    margin-bottom: 15px;
+}
+.picnic-note p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+.picnic-note ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+.picnic-note ul li {
+    background-color: #ffb6c1;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+.picnic-polaroid {
+    background-color: #fff;
+    padding: 15px 15px 50px 15px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    transform: rotate(8deg);
+    width: 45%;
+}
+.picnic-polaroid img {
+    width: 100%;
+    object-fit: cover;
+}
+.picnic-polaroid p {
+    font-family: 'Poor Story', cursive;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+}
+
+/* Design 5: The Product Spotlight */
+.spotlight-layout {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f8f9fa;
+}
+.spotlight-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+.spotlight-title {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 2.8rem;
+    color: #333;
+}
+.spotlight-description {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 10px auto 30px auto;
+}
+.spotlight-features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 25px 0;
+}
+.feature {
+    text-align: center;
+}
+.feature .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+.feature span {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 700;
+}
+
+/* --- Designs 6-10 --- */
+
+/* Design 6: The Brown Paper Bag */
+.paper-bag-layout {
+    padding: 40px;
+    background-color: #d2b48c;
+    background-image: url('https://www.transparenttextures.com/patterns/crissxcross.png');
+    text-align: center;
+    position: relative;
+}
+.paper-bag-stamp {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border: 3px double #8b4513;
+    color: #8b4513;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.2rem;
+    transform: rotate(10deg);
+    opacity: 0.7;
+}
+.paper-bag-title {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 2.5rem;
+    color: #5a3a22;
+    margin-bottom: 20px;
+}
+.paper-bag-image {
+    max-width: 80%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.paper-bag-description {
+    font-size: 1.1rem;
+    color: #6b4f3a;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+}
+.paper-bag-divider {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(90, 58, 34, 0), rgba(90, 58, 34, 0.75), rgba(90, 58, 34, 0));
+    margin-bottom: 20px;
+}
+.paper-bag-features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-style: italic;
+    color: #8b4513;
+}
+
+/* Design 7: The Farmer's Journal */
+.journal-layout {
+    background-color: #fdfbf5;
+    background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png');
+    padding: 40px;
+    border: 1px solid #ddd;
+}
+.journal-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.journal-date {
+    font-size: 1rem;
+    color: #999;
+}
+.journal-title {
+    font-family: 'Poor Story', cursive;
+    font-size: 2.8rem;
+    color: #5a8a66;
+}
+.journal-body {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.journal-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 10px solid #fff;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+    transform: rotate(-3deg);
+    flex-shrink: 0;
+}
+.journal-text {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #444;
+}
+.journal-footer {
+    text-align: right;
+    margin-top: 30px;
+    font-family: 'Poor Story', cursive;
+    font-size: 1.3rem;
+    color: #aaa;
+}
+
+/* Design 8: The Ingredient Focus */
+.ingredient-layout {
+    display: flex;
+    background-color: #f9f9f9;
+}
+.ingredient-main {
+    flex: 2;
+    padding: 40px;
+    text-align: center;
+}
+.ingredient-main img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.ingredient-main h3 {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 2rem;
+}
+.ingredient-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 20px;
+    background-color: #efefef;
+}
+.ingredient-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.ingredient-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+.ingredient-item span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* Design 9: The Wooden Crate */
+.crate-layout {
+    padding: 40px;
+    text-align: center;
+    background-color: #e4d8c7;
+    border: 20px solid #a07e56;
+    border-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png') 40 round;
+    position: relative;
+}
+.crate-layout::before {
+    content: 'HANDLE WITH CARE';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fdfcf8;
+    padding: 0 10px;
+    font-size: 0.8rem;
+    color: #a07e56;
+}
+.crate-title {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-size: 3.5rem;
+    color: #6b4f3a;
+    opacity: 0.7;
+    margin-bottom: 0;
+}
+.crate-subtitle {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: #6b4f3a;
+    margin-bottom: 20px;
+}
+.crate-layout img {
+    max-width: 400px;
+    width: 80%;
+    border-radius: 5px;
+}
+.crate-info {
+    background-color: rgba(255,255,255,0.7);
+    padding: 15px;
+    margin-top: -30px;
+    position: relative;
+    display: inline-block;
+}
+.crate-info p {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Design 10: The Infographic */
+.infographic-layout {
+    padding: 40px;
+    background-color: #f0f7f1;
+}
+.infographic-title {
+    text-align: center;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 2.5rem;
+    color: #3e6549;
+    margin-bottom: 40px;
+}
+.infographic-timeline {
+    list-style: none;
+    position: relative;
+}
+.infographic-timeline::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    bottom: 20px;
+    width: 4px;
+    background-color: #c8e6c9;
+    border-radius: 2px;
+}
+.infographic-timeline li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+.timeline-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #81c784;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #fff;
+    flex-shrink: 0;
+    border: 5px solid #f0f7f1;
+    z-index: 1;
+}
+.timeline-content {
+    background-color: #fff;
+    margin-left: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    width: 100%;
+}
+.timeline-content h4 {
+    font-size: 1.3rem;
+    color: #2e7d32;
+}
+.timeline-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* --- Designs 11-15 --- */
+
+/* Design 11: 농부의 추천 상품 컨셉 */
+.farmer-recommend-layout {
+    padding: 50px 30px;
+    background-color: #fcf8f3; /* 따뜻한 베이지색 배경 */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.farmer-profile {
+    text-align: center;
+    flex-shrink: 0;
+}
+.farmer-portrait {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #a5d6a7;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+.farmer-name {
+    font-family: 'Poor Story', cursive;
+    font-size: 1.8rem;
+    color: #5d9c59;
+}
+.recommend-content {
+    max-width: 550px;
+    text-align: left;
+}
+.recommend-title {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 2.2rem;
+    color: #3e6549;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+.recommend-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+.recommend-features {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.recommend-features li {
+    background-color: #e8f5e9;
+    color: #3e6549;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+
+/* Design 12: 제품 여정/수명 주기 컨셉 */
+.product-journey-layout {
+    padding: 50px 20px;
+    background-color: #fdfcf8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.journey-step {
+    text-align: center;
+    flex-basis: 150px;
+}
+.step-icon {
+    font-size: 3.5rem;
+    color: #5d9c59;
+    margin-bottom: 10px;
+}
+.journey-step h3 {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+.journey-step p {
+    font-size: 0.9rem;
+    color: #777;
+}
+.journey-arrow {
+    font-size: 2rem;
+    color: #ccc;
+    margin: 0 10px;
+}
+@media (max-width: 768px) {
+    .product-journey-layout {
+        flex-direction: column;
+    }
+    .journey-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+}
+
+/* Design 13: 비교/장점 그리드 컨셉 */
+.benefits-grid-layout {
+    padding: 40px;
+    background-color: #f7f5f0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.benefit-item {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+.benefit-icon {
+    font-size: 3rem;
+    color: #ffc107; /* 강조 색상 */
+    margin-bottom: 15px;
+}
+.benefit-item h3 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+.benefit-item p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Design 14: 고객 후기/스토리 중심 컨셉 */
+.testimonial-story-layout {
+    padding: 50px 20px;
+    background-color: #fcf8f3;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.testimonial-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+}
+.customer-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #a5d6a7;
+    margin-top: -70px; /* 카드 위로 살짝 띄우기 */
+    margin-bottom: 20px;
+}
+.quote {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+.customer-name {
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: bold;
+}
+.farmer-story {
+    background-color: #e8f5e9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 450px;
+    text-align: center;
+}
+.farmer-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #5d9c59;
+    margin-bottom: 20px;
+}
+.farmer-story h3 {
+    font-family: 'Poor Story', cursive;
+    font-size: 2rem;
+    color: #3e6549;
+    margin-bottom: 15px;
+}
+.story-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+}
+@media (max-width: 768px) {
+    .testimonial-story-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .customer-photo {
+        margin-top: 0;
+    }
+}
+
+/* Design 15: 미니멀리스트 제품 쇼케이스 컨셉 */
+.minimalist-showcase-layout {
+    padding: 60px 20px;
+    background-color: #fdfcf8;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.showcase-image-wrapper {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    position: relative;
+}
+.showcase-main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.showcase-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left;
+}
+.showcase-title {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+.showcase-tagline {
+    font-family: 'Poor Story', cursive;
+    font-size: 1.5rem;
+    color: #5d9c59;
+    margin-bottom: 20px;
+}
+.showcase-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+.showcase-features {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.showcase-features li {
+    background-color: #e8f5e9;
+    color: #3e6549;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
